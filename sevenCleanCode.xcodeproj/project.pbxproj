@@ -7,26 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		551E597D285BA16C003CAF09 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 551E597C285BA16C003CAF09 /* Swinject */; };
-		551E597F285BA16C003CAF09 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 551E597E285BA16C003CAF09 /* Swinject-Dynamic */; };
-		558A9C8D2857CAC700575A1F /* sevenCleanCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A9C8C2857CAC700575A1F /* sevenCleanCodeApp.swift */; };
+		558A9C8D2857CAC700575A1F /* SevenCleanCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A9C8C2857CAC700575A1F /* SevenCleanCodeApp.swift */; };
 		558A9C8F2857CAC700575A1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A9C8E2857CAC700575A1F /* ContentView.swift */; };
 		558A9C912857CAC900575A1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558A9C902857CAC900575A1F /* Assets.xcassets */; };
 		558A9C942857CAC900575A1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558A9C932857CAC900575A1F /* Preview Assets.xcassets */; };
 		558A9C962857CAC900575A1F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A9C952857CAC900575A1F /* Persistence.swift */; };
 		558A9C992857CAC900575A1F /* sevenCleanCode.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 558A9C972857CAC900575A1F /* sevenCleanCode.xcdatamodeld */; };
+		55AC14D32864D69A00A55B5F /* LoginResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC14D22864D69A00A55B5F /* LoginResultModel.swift */; };
+		55AC14D72864F2B800A55B5F /* TypeMetods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC14D62864F2B800A55B5F /* TypeMetods.swift */; };
+		55AC14D92864F2F300A55B5F /* ConfURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC14D82864F2F300A55B5F /* ConfURL.swift */; };
+		55AC14DB2864F34C00A55B5F /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC14DA2864F34C00A55B5F /* LoginRequest.swift */; };
+		55AC14DD2864F44000A55B5F /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC14DC2864F44000A55B5F /* Factory.swift */; };
+		55AC14DF2864F8A400A55B5F /* ConfURLAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC14DE2864F8A400A55B5F /* ConfURLAll.swift */; };
+		55AC14E22864FCD000A55B5F /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC14E12864FCD000A55B5F /* UserDefault.swift */; };
+		55AC14E52864FE1300A55B5F /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC14E42864FE1300A55B5F /* LogoutRequest.swift */; };
+		55AC14EB2865031B00A55B5F /* LogoutResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC14EA2865031B00A55B5F /* LogoutResultModel.swift */; };
+		55B4FE2028684EA300D62B70 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B4FE1F28684EA300D62B70 /* RegisterRequest.swift */; };
+		55B4FE222868559600D62B70 /* RegistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B4FE212868559600D62B70 /* RegistModel.swift */; };
+		55B4FE2428685B1C00D62B70 /* EnterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B4FE2328685B1C00D62B70 /* EnterModel.swift */; };
+		55B4FE2628685F5500D62B70 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B4FE2528685F5500D62B70 /* RequestProtocol.swift */; };
+		55B4FE282868602000D62B70 /* ChangeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B4FE272868602000D62B70 /* ChangeRequest.swift */; };
+		55B4FE2B28686CE600D62B70 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B4FE2A28686CE600D62B70 /* StartPresenter.swift */; };
 		55C883872859166A006A378C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C883862859166A006A378C /* StartView.swift */; };
 		55C8838D28591B9D006A378C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 55C8838C28591B9D006A378C /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		558A9C892857CAC700575A1F /* sevenCleanCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sevenCleanCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		558A9C8C2857CAC700575A1F /* sevenCleanCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sevenCleanCodeApp.swift; sourceTree = "<group>"; };
+		558A9C8C2857CAC700575A1F /* SevenCleanCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenCleanCodeApp.swift; sourceTree = "<group>"; };
 		558A9C8E2857CAC700575A1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		558A9C902857CAC900575A1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		558A9C932857CAC900575A1F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		558A9C952857CAC900575A1F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		558A9C982857CAC900575A1F /* sevenCleanCode.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sevenCleanCode.xcdatamodel; sourceTree = "<group>"; };
+		55AC14D22864D69A00A55B5F /* LoginResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResultModel.swift; sourceTree = "<group>"; };
+		55AC14D42864E5E500A55B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		55AC14D62864F2B800A55B5F /* TypeMetods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeMetods.swift; sourceTree = "<group>"; };
+		55AC14D82864F2F300A55B5F /* ConfURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfURL.swift; sourceTree = "<group>"; };
+		55AC14DA2864F34C00A55B5F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		55AC14DC2864F44000A55B5F /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		55AC14DE2864F8A400A55B5F /* ConfURLAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfURLAll.swift; sourceTree = "<group>"; };
+		55AC14E12864FCD000A55B5F /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		55AC14E42864FE1300A55B5F /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
+		55AC14EA2865031B00A55B5F /* LogoutResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResultModel.swift; sourceTree = "<group>"; };
+		55B4FE1F28684EA300D62B70 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		55B4FE212868559600D62B70 /* RegistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistModel.swift; sourceTree = "<group>"; };
+		55B4FE2328685B1C00D62B70 /* EnterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterModel.swift; sourceTree = "<group>"; };
+		55B4FE2528685F5500D62B70 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		55B4FE272868602000D62B70 /* ChangeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRequest.swift; sourceTree = "<group>"; };
+		55B4FE2A28686CE600D62B70 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
 		55C883862859166A006A378C /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,15 +64,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				551E597F285BA16C003CAF09 /* Swinject-Dynamic in Frameworks */,
 				55C8838D28591B9D006A378C /* Alamofire in Frameworks */,
-				551E597D285BA16C003CAF09 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		551E5980285BAEB9003CAF09 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				55AC14D62864F2B800A55B5F /* TypeMetods.swift */,
+				55AC14E32864FD1C00A55B5F /* URL */,
+				55AC14E6286501D900A55B5F /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		558A9C802857CAC700575A1F = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +100,7 @@
 		558A9C8B2857CAC700575A1F /* sevenCleanCode */ = {
 			isa = PBXGroup;
 			children = (
+				55AC14D42864E5E500A55B5F /* Info.plist */,
 				558A9C9F2857CAE400575A1F /* App */,
 				558A9CA42857CB1000575A1F /* Core */,
 				558A9CA52857CB1700575A1F /* Resources */,
@@ -74,7 +112,7 @@
 		558A9C9F2857CAE400575A1F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				558A9C8C2857CAC700575A1F /* sevenCleanCodeApp.swift */,
+				558A9C8C2857CAC700575A1F /* SevenCleanCodeApp.swift */,
 				558A9CA32857CB0100575A1F /* BusinessLogic */,
 				558A9CA22857CAF900575A1F /* Entity */,
 				558A9CA12857CAF000575A1F /* Assembly */,
@@ -86,8 +124,8 @@
 		558A9CA02857CAE900575A1F /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				558A9C8E2857CAC700575A1F /* ContentView.swift */,
 				55C883862859166A006A378C /* StartView.swift */,
+				558A9C8E2857CAC700575A1F /* ContentView.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -102,6 +140,7 @@
 		558A9CA22857CAF900575A1F /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				55B4FE2928686CC000D62B70 /* PresenterStrartView */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -109,8 +148,11 @@
 		558A9CA32857CB0100575A1F /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				558A9C972857CAC900575A1F /* sevenCleanCode.xcdatamodeld */,
+				55AC14E02864FCBC00A55B5F /* Singletone */,
+				55AC14D12864D67A00A55B5F /* Model */,
+				551E5980285BAEB9003CAF09 /* Network */,
 				558A9C952857CAC900575A1F /* Persistence.swift */,
+				558A9C972857CAC900575A1F /* sevenCleanCode.xcdatamodeld */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -118,7 +160,6 @@
 		558A9CA42857CB1000575A1F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				55C8838828591928006A378C /* Network */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -147,11 +188,53 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		55C8838828591928006A378C /* Network */ = {
+		55AC14D12864D67A00A55B5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55B4FE2328685B1C00D62B70 /* EnterModel.swift */,
+				55AC14D22864D69A00A55B5F /* LoginResultModel.swift */,
+				55AC14EA2865031B00A55B5F /* LogoutResultModel.swift */,
+				55B4FE212868559600D62B70 /* RegistModel.swift */,
 			);
-			path = Network;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55AC14E02864FCBC00A55B5F /* Singletone */ = {
+			isa = PBXGroup;
+			children = (
+				55AC14E12864FCD000A55B5F /* UserDefault.swift */,
+			);
+			path = Singletone;
+			sourceTree = "<group>";
+		};
+		55AC14E32864FD1C00A55B5F /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				55AC14D82864F2F300A55B5F /* ConfURL.swift */,
+				55AC14DE2864F8A400A55B5F /* ConfURLAll.swift */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
+		55AC14E6286501D900A55B5F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				55B4FE2528685F5500D62B70 /* RequestProtocol.swift */,
+				55AC14DA2864F34C00A55B5F /* LoginRequest.swift */,
+				55AC14E42864FE1300A55B5F /* LogoutRequest.swift */,
+				55B4FE1F28684EA300D62B70 /* RegisterRequest.swift */,
+				55B4FE272868602000D62B70 /* ChangeRequest.swift */,
+				55AC14DC2864F44000A55B5F /* Factory.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		55B4FE2928686CC000D62B70 /* PresenterStrartView */ = {
+			isa = PBXGroup;
+			children = (
+				55B4FE2A28686CE600D62B70 /* StartPresenter.swift */,
+			);
+			path = PresenterStrartView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,8 +255,6 @@
 			name = sevenCleanCode;
 			packageProductDependencies = (
 				55C8838C28591B9D006A378C /* Alamofire */,
-				551E597C285BA16C003CAF09 /* Swinject */,
-				551E597E285BA16C003CAF09 /* Swinject-Dynamic */,
 			);
 			productName = sevenCleanCode;
 			productReference = 558A9C892857CAC700575A1F /* sevenCleanCode.app */;
@@ -205,7 +286,6 @@
 			mainGroup = 558A9C802857CAC700575A1F;
 			packageReferences = (
 				55C8838B28591B9D006A378C /* XCRemoteSwiftPackageReference "Alamofire" */,
-				551E597B285BA16C003CAF09 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 558A9C8A2857CAC700575A1F /* Products */;
 			projectDirPath = "";
@@ -233,11 +313,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B4FE2428685B1C00D62B70 /* EnterModel.swift in Sources */,
+				55AC14EB2865031B00A55B5F /* LogoutResultModel.swift in Sources */,
+				55AC14D92864F2F300A55B5F /* ConfURL.swift in Sources */,
+				55AC14E22864FCD000A55B5F /* UserDefault.swift in Sources */,
+				55AC14DD2864F44000A55B5F /* Factory.swift in Sources */,
+				55AC14D72864F2B800A55B5F /* TypeMetods.swift in Sources */,
+				55AC14E52864FE1300A55B5F /* LogoutRequest.swift in Sources */,
+				55AC14DB2864F34C00A55B5F /* LoginRequest.swift in Sources */,
+				55AC14DF2864F8A400A55B5F /* ConfURLAll.swift in Sources */,
 				558A9C962857CAC900575A1F /* Persistence.swift in Sources */,
 				55C883872859166A006A378C /* StartView.swift in Sources */,
+				55B4FE2028684EA300D62B70 /* RegisterRequest.swift in Sources */,
 				558A9C8F2857CAC700575A1F /* ContentView.swift in Sources */,
+				55B4FE2628685F5500D62B70 /* RequestProtocol.swift in Sources */,
 				558A9C992857CAC900575A1F /* sevenCleanCode.xcdatamodeld in Sources */,
-				558A9C8D2857CAC700575A1F /* sevenCleanCodeApp.swift in Sources */,
+				558A9C8D2857CAC700575A1F /* SevenCleanCodeApp.swift in Sources */,
+				55B4FE2B28686CE600D62B70 /* StartPresenter.swift in Sources */,
+				55B4FE282868602000D62B70 /* ChangeRequest.swift in Sources */,
+				55AC14D32864D69A00A55B5F /* LoginResultModel.swift in Sources */,
+				55B4FE222868559600D62B70 /* RegistModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +466,7 @@
 				DEVELOPMENT_TEAM = 6DJ55G74KP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = sevenCleanCode/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -400,6 +496,7 @@
 				DEVELOPMENT_TEAM = 6DJ55G74KP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = sevenCleanCode/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -442,14 +539,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		551E597B285BA16C003CAF09 /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		55C8838B28591B9D006A378C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -461,16 +550,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		551E597C285BA16C003CAF09 /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 551E597B285BA16C003CAF09 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
-		551E597E285BA16C003CAF09 /* Swinject-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 551E597B285BA16C003CAF09 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = "Swinject-Dynamic";
-		};
 		55C8838C28591B9D006A378C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 55C8838B28591B9D006A378C /* XCRemoteSwiftPackageReference "Alamofire" */;
