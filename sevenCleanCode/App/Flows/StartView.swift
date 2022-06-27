@@ -15,63 +15,58 @@ struct StartView: View {
     @State var presntNewView = false
     
     var login = FactoryLogin().configFactory(caseFactory: .login)
-    var logout = FactoryLogin().configFactory(caseFactory: .logout)
 
     var body: some View {
         if !presntNewView {
-            ZStack {
-                Image("3")
-                    .resizable()
-
-                VStack {
-                    Group {
-                        TextField("Enter name", text: $dataModel.userName)
-                        TextField("Enter password", text: $dataModel.password)
-
-                    }
-                    .frame(height: 35)
-                    .cornerRadius(30)
-                    .background(.white)
-                    .foregroundColor(.black)
-                    .padding(20)
-
-                    Button(action: {
-                        login
-                            .load(data: dataModel) { result in
-                                switch result {
-                                case .success(let data):
-                                    let decod = presenter.decodLogin(data: data)
-                                    switch decod {
-                                    case .success(let finalDecod):
-                                        presntNewView = presenter.checkValue(data: finalDecod)
-                                    case .failure(let err):
-                                        print(err)
-                                    }
-                                case .failure(let error):
-                                    print(error)
-                                }
-                            }
-                    }, label: {
-                        Text("Enter")
-                    })
-                }
-            }
+            loginView
         } else {
-            Text("Exit")
-                .onTapGesture {
-                    logout.load(data: dataModel) { result in
-                        switch result {
-                        case .success(let data):
-                            let decod = presenter.decodLogout(data: data)
-                            presntNewView = presenter.checkValueLogout(data: decod)
-                        case .failure(let error):
-                            print(error)
-                        }
-                    }
-                }
+            WorkView(dataModel: dataModel, presenter: presenter, presntNewView: $presntNewView)
         }
     }
 }
+
+extension StartView {
+    var loginView: some View {
+        ZStack {
+            Image("3")
+                .resizable()
+
+            VStack {
+                Group {
+                    TextField("Enter name", text: $dataModel.userName)
+                    TextField("Enter password", text: $dataModel.password)
+
+                }
+                .frame(height: 35)
+                .cornerRadius(30)
+                .background(.white)
+                .foregroundColor(.black)
+                .padding(20)
+
+                Button(action: {
+                    login
+                        .load(data: dataModel) { result in
+                            switch result {
+                            case .success(let data):
+                                let decod = presenter.decodLogin(data: data)
+                                switch decod {
+                                case .success(let finalDecod):
+                                    presntNewView = presenter.checkValue(data: finalDecod)
+                                case .failure(let err):
+                                    print(err)
+                                }
+                            case .failure(let error):
+                                print(error)
+                            }
+                        }
+                }, label: {
+                    Text("Enter")
+                })
+            }
+        }
+    }
+}
+
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {
