@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum ConfFactory {
+enum ConfMethodURL {
     case login
     case logout
 }
 
 class FactoryLogin {
-    func configFactory(caseFactory: ConfFactory) -> RequestProtocolEnterExit {
+    func configFactory(caseFactory: ConfMethodURL) -> RequestProtocolEnterExit {
         let url = ConfigURLLogin()
         let urlAll = ConfURLAll(url)
 
