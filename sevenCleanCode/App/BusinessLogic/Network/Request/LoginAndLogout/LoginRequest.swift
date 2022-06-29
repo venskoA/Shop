@@ -11,6 +11,7 @@ enum ErrorMyCastom: Error {
     case errorUrlComponent
     case enterLoginAndPassword
     case errorLogout
+    case errorListProducts
 }
 
 protocol RequestProtocolEnterExit {
