@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		55123874286CD9AE00C68657 /* ListProductGetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55123873286CD9AE00C68657 /* ListProductGetModel.swift */; };
+		5512387C286CE2D700C68657 /* SevenCleanCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512387B286CE2D700C68657 /* SevenCleanCodeTests.swift */; };
 		552BC8C5286B90A1000B988D /* LoginAndLogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BC8C4286B90A1000B988D /* LoginAndLogoutRequest.swift */; };
 		552BC8C8286B9435000B988D /* ListProductsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BC8C7286B9435000B988D /* ListProductsRequest.swift */; };
 		558A9C8D2857CAC700575A1F /* SevenCleanCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A9C8C2857CAC700575A1F /* SevenCleanCodeApp.swift */; };
@@ -36,10 +37,24 @@
 		55C28A41286A27F000BA0365 /* RegistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C28A40286A27F000BA0365 /* RegistPresenter.swift */; };
 		55C883872859166A006A378C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C883862859166A006A378C /* StartView.swift */; };
 		55C8838D28591B9D006A378C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 55C8838C28591B9D006A378C /* Alamofire */; };
+		55F40529286E105A00F0BD86 /* LoadNetworckTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F40528286E105A00F0BD86 /* LoadNetworckTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5512387D286CE2D700C68657 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 558A9C812857CAC700575A1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 558A9C882857CAC700575A1F;
+			remoteInfo = sevenCleanCode;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		55123873286CD9AE00C68657 /* ListProductGetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductGetModel.swift; sourceTree = "<group>"; };
+		55123879286CE2D700C68657 /* SevenCleanCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SevenCleanCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5512387B286CE2D700C68657 /* SevenCleanCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenCleanCodeTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		55123882286CED3900C68657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		552BC8C4286B90A1000B988D /* LoginAndLogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndLogoutRequest.swift; sourceTree = "<group>"; };
 		552BC8C7286B9435000B988D /* ListProductsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductsRequest.swift; sourceTree = "<group>"; };
 		558A9C892857CAC700575A1F /* sevenCleanCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sevenCleanCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,9 +84,17 @@
 		55C28A3E286A248D00BA0365 /* WorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkView.swift; sourceTree = "<group>"; };
 		55C28A40286A27F000BA0365 /* RegistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistPresenter.swift; sourceTree = "<group>"; };
 		55C883862859166A006A378C /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		55F40528286E105A00F0BD86 /* LoadNetworckTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadNetworckTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		55123876286CE2D700C68657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		558A9C862857CAC700575A1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,6 +106,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5512387A286CE2D700C68657 /* SevenCleanCodeTests */ = {
+			isa = PBXGroup;
+			children = (
+				55123882286CED3900C68657 /* Info.plist */,
+				5512387B286CE2D700C68657 /* SevenCleanCodeTests.swift */,
+				55F40528286E105A00F0BD86 /* LoadNetworckTest.swift */,
+			);
+			path = SevenCleanCodeTests;
+			sourceTree = "<group>";
+		};
 		551E5980285BAEB9003CAF09 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				558A9C8B2857CAC700575A1F /* sevenCleanCode */,
+				5512387A286CE2D700C68657 /* SevenCleanCodeTests */,
 				558A9C8A2857CAC700575A1F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				558A9C892857CAC700575A1F /* sevenCleanCode.app */,
+				55123879286CE2D700C68657 /* SevenCleanCodeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,6 +301,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		55123878286CE2D700C68657 /* SevenCleanCodeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5512387F286CE2D700C68657 /* Build configuration list for PBXNativeTarget "SevenCleanCodeTests" */;
+			buildPhases = (
+				55123875286CE2D700C68657 /* Sources */,
+				55123876286CE2D700C68657 /* Frameworks */,
+				55123877286CE2D700C68657 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5512387E286CE2D700C68657 /* PBXTargetDependency */,
+			);
+			name = SevenCleanCodeTests;
+			productName = SevenCleanCodeTests;
+			productReference = 55123879286CE2D700C68657 /* SevenCleanCodeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		558A9C882857CAC700575A1F /* sevenCleanCode */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 558A9C9C2857CAC900575A1F /* Build configuration list for PBXNativeTarget "sevenCleanCode" */;
@@ -296,6 +349,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					55123878286CE2D700C68657 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 558A9C882857CAC700575A1F;
+					};
 					558A9C882857CAC700575A1F = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -318,11 +375,19 @@
 			projectRoot = "";
 			targets = (
 				558A9C882857CAC700575A1F /* sevenCleanCode */,
+				55123878286CE2D700C68657 /* SevenCleanCodeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		55123877286CE2D700C68657 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		558A9C872857CAC700575A1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,6 +400,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		55123875286CE2D700C68657 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F40529286E105A00F0BD86 /* LoadNetworckTest.swift in Sources */,
+				5512387C286CE2D700C68657 /* SevenCleanCodeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		558A9C852857CAC700575A1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,7 +444,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5512387E286CE2D700C68657 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 558A9C882857CAC700575A1F /* sevenCleanCode */;
+			targetProxy = 5512387D286CE2D700C68657 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		55123880286CE2D700C68657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6DJ55G74KP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SevenCleanCodeTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.SevenCleanCodeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sevenCleanCode.app/sevenCleanCode";
+			};
+			name = Debug;
+		};
+		55123881286CE2D700C68657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6DJ55G74KP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SevenCleanCodeTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.SevenCleanCodeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sevenCleanCode.app/sevenCleanCode";
+			};
+			name = Release;
+		};
 		558A9C9A2857CAC900575A1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -550,6 +672,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5512387F286CE2D700C68657 /* Build configuration list for PBXNativeTarget "SevenCleanCodeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55123880286CE2D700C68657 /* Debug */,
+				55123881286CE2D700C68657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		558A9C842857CAC700575A1F /* Build configuration list for PBXProject "sevenCleanCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

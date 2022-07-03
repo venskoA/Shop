@@ -38,7 +38,8 @@ final class ConfigURLLogin: ConfURLProtocol {
         guard let url = urlComponent.url else {
             throw ErrorMyCastom.errorUrlComponent
         }
-
+        
+        print(url)
         return url
     }
 }

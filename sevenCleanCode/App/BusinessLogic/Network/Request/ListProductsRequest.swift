@@ -8,6 +8,10 @@
 import Foundation
 
 class ListProductsRequest: RequestProtocolEnterExit {
+    static func == (lhs: ListProductsRequest, rhs: ListProductsRequest) -> Bool {
+        return lhs == rhs
+    }
+
     var configureUrl: ConfURLProtocol
     var session: URLSession
 
@@ -28,7 +32,6 @@ class ListProductsRequest: RequestProtocolEnterExit {
 
         do {
             url = try configureUrl.configure(param: param, path: .change)
-            print(url)
         } catch {
             completion(.failure(ErrorMyCastom.errorListProducts))
             return

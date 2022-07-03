@@ -42,7 +42,6 @@ class LoginRequest: RequestProtocolEnterExit {
                                        "password": data.password]
         do {
             url = try configureUrl.configure(param: param, path: .login)
-            print(url)
         } catch {
             completion(.failure(ErrorMyCastom.errorUrlComponent))
             return
@@ -53,6 +52,8 @@ class LoginRequest: RequestProtocolEnterExit {
                 completion(.failure(ErrorMyCastom.enterLoginAndPassword))
                 return
             }
+
+            print(data)
 
             completion(.success(data))
         }

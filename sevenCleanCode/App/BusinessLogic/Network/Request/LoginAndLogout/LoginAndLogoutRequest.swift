@@ -26,6 +26,10 @@ class LoginAndLogoutFactoru {
 }
 
 class LoginAndLogoutRequest: RequestProtocolEnterExit {
+    static func == (lhs: LoginAndLogoutRequest, rhs: LoginAndLogoutRequest) -> Bool {
+        return lhs == rhs
+    }
+
     var configureUrl: ConfURLProtocol
     var session: URLSession
     var urlMethod: ConfMethodURL
@@ -48,7 +52,6 @@ class LoginAndLogoutRequest: RequestProtocolEnterExit {
 
         do {
             url = try configureUrl.configure(param: param, path: .login)
-            print(url)
         } catch {
             completion(.failure(ErrorMyCastom.errorUrlComponent))
             return

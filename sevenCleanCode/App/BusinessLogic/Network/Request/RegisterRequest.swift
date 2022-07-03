@@ -42,7 +42,6 @@ class RegisterRequest : RegisterRequestProtocol {
                                        "bio": data.bio]
         do {
             url = try configureUrl.configure(param: param, path: .reist)
-            print(url)
         } catch {
             completion(.failure(ErrorMyCastom.errorUrlComponent))
             return
