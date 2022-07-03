@@ -8,12 +8,14 @@
 import SwiftUI
 
 @main
-struct sevenCleanCodeApp: App {
+struct SevenCleanCodeApp: App {
     let persistenceController = PersistenceController.shared
+    var dataModel = EnterModel(id: 123, userName: "aa", password: "123", email: "ooo@gmail.com", gender: .mail, creditCards: "98980-99090-900", bio: "---")
 
     var body: some Scene {
         WindowGroup {
-            StartView()
+            let presenter = StartPresenter()
+            StartView(dataModel: dataModel, presenter: presenter)
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
