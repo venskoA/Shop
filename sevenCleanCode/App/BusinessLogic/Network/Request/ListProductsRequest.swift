@@ -1,31 +1,21 @@
 //
-//  LoginRequest.swift
+//  ListProductsRequest.swift
 //  sevenCleanCode
 //
-//  Created by Andrey Vensko on 23.06.22.
+//  Created by Andrey Vensko on 28.06.22.
 //
 
 import Foundation
 
-enum ErrorMyCastom: Error {
-    case errorUrlComponent
-    case enterLoginAndPassword
-    case errorLogout
-}
+class ListProductsRequest: RequestProtocolEnterExit {
+    static func == (lhs: ListProductsRequest, rhs: ListProductsRequest) -> Bool {
+        return lhs == rhs
+    }
 
-protocol RequestProtocolEnterExit {
-    var configureUrl: ConfURLProtocol { get set }
-    var session: URLSession  { get set }
-    func load(data: EnterModel,
-              completion: @escaping ((Result<Data, Error>) -> ()))
-}
-
-
-class LoginRequest: RequestProtocolEnterExit {
     var configureUrl: ConfURLProtocol
     var session: URLSession
 
-    init(configUrl: ConfURLProtocol) {
+    init(configUrl: ConfURLProtocol, urlMethod: ConfMethodURL) {
         self.configureUrl = configUrl
         self.session = {
             let config = URLSessionConfiguration.default
@@ -39,11 +29,11 @@ class LoginRequest: RequestProtocolEnterExit {
         var url: URL
         let param: [String: String] = ["username": data.userName,
                                        "password": data.password]
+
         do {
-            url = try configureUrl.configure(param: param, path: .login)
-            print(url)
+            url = try configureUrl.configure(param: param, path: .change)
         } catch {
-            completion(.failure(ErrorMyCastom.errorUrlComponent))
+            completion(.failure(ErrorMyCastom.errorListProducts))
             return
         }
 

@@ -12,4 +12,5 @@ enum TypeMetod: String {
     case lodout = "/GeekBrainsTutorial/online-store-api/master/responses/logout.json"
     case reist = "/GeekBrainsTutorial/online-store-api/master/responses/registerUser.json"
     case change = "/GeekBrainsTutorial/online-store-api/master/responses/changeUserData.json"
+    case listProduct = "/GeekBrainsTutorial/online-store-api/master/responses/catalogData.json"
 }
