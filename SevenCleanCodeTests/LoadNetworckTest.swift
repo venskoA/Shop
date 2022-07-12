@@ -14,7 +14,7 @@ class LoadLoginNetworckTest: XCTestCase {
     var urlAll = ConfURLAll(ConfigURLLogin())
     var defaultValue: Bool?
 
-    let dataModel = EnterModel(id: 123,
+    let dataModel = UserData(id: 123,
                                userName: "aa",
                                password: "123",
                                email: "ooo@gmail.com",
@@ -36,7 +36,7 @@ class LoadLoginNetworckTest: XCTestCase {
 
         load = LoginRequest(configUrl: urlAll)
 
-        let dataModel = EnterModel(id: 123,
+        let dataModel = UserData(id: 123,
                                    userName: "aa",
                                    password: "123",
                                    email: "ooo@gmail.com",

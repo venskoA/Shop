@@ -13,8 +13,8 @@ enum ErrorStartPresent: Error {
 }
 
 protocol StartPresenterProtocol {
-    func decodLogin(data: Data) -> Result<LoginResult, Error>
-    func checkValue(data: LoginResult) -> Bool
+    func decodLogin(data: Data) -> Result<LoginResultModel, Error>
+    func checkValue(data: LoginResultModel) -> Bool
     
     func decodLogout(data: Data) -> LogoutResultModel 
     func checkValueLogout(data: LogoutResultModel) -> Bool
@@ -23,16 +23,16 @@ protocol StartPresenterProtocol {
 struct StartPresenter: StartPresenterProtocol {
     var decoder = JSONDecoder()
 
-    func decodLogin(data: Data) -> Result<LoginResult, Error> {
+    func decodLogin(data: Data) -> Result<LoginResultModel, Error> {
         do {
-            let result = try decoder.decode(LoginResult.self, from: data)
+            let result = try decoder.decode(LoginResultModel.self, from: data)
             return .success(result)
         } catch {
             return .failure(ErrorStartPresent.errorDecoder)
         }
     }
 
-    func checkValue(data: LoginResult) -> Bool {
+    func checkValue(data: LoginResultModel) -> Bool {
         if data.user.login == "geekbrains" || data.user.id == 123 {
             return true
         } else {
