@@ -11,6 +11,7 @@ class UserDefault {
     static let shared = UserDefault()
 
     var id: Int?
+    var userData: UserData?
 
     init() {}
 }
