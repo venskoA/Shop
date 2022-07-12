@@ -8,9 +8,9 @@
 import Foundation
 
 class LoginAndLogoutFactoru {
-    let dataModel: EnterModel
+    let dataModel: UserData
 
-    init(_ datamodel: EnterModel) {
+    init(_ datamodel: UserData) {
         self.dataModel = datamodel
     }
 
@@ -26,9 +26,6 @@ class LoginAndLogoutFactoru {
 }
 
 class LoginAndLogoutRequest: RequestProtocolEnterExit {
-    static func == (lhs: LoginAndLogoutRequest, rhs: LoginAndLogoutRequest) -> Bool {
-        return lhs == rhs
-    }
 
     var configureUrl: ConfURLProtocol
     var session: URLSession
@@ -44,7 +41,7 @@ class LoginAndLogoutRequest: RequestProtocolEnterExit {
         self.urlMethod = urlMethod
     }
 
-    func load(data: EnterModel,
+    func load(data: UserData,
               completion: @escaping ((Result<Data, Error>) -> ())) {
         var url: URL
         let param: [String: String] = LoginAndLogoutFactoru(data)

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct RegistModel: Codable {
+struct RegistChangeResultModel: Codable {
     var result: Int
-    var userMessage: String
+    var userMessage: String?
 }
 

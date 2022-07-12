@@ -8,14 +8,10 @@
 import Foundation
 
 class ListProductsRequest: RequestProtocolEnterExit {
-    static func == (lhs: ListProductsRequest, rhs: ListProductsRequest) -> Bool {
-        return lhs == rhs
-    }
-
     var configureUrl: ConfURLProtocol
     var session: URLSession
 
-    init(configUrl: ConfURLProtocol, urlMethod: ConfMethodURL) {
+    init(configUrl: ConfURLProtocol) {
         self.configureUrl = configUrl
         self.session = {
             let config = URLSessionConfiguration.default
@@ -24,7 +20,7 @@ class ListProductsRequest: RequestProtocolEnterExit {
         }()
     }
 
-    func load(data: EnterModel,
+    func load(data: UserData,
               completion: @escaping ((Result<Data, Error>) -> ())) {
         var url: URL
         let param: [String: String] = ["username": data.userName,

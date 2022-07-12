@@ -9,8 +9,8 @@ import Foundation
 
 
 protocol RegisterRequestProtocol: RequestProtocol {
-    func load(data: EnterModel,
-              completion: @escaping ((Result<RegistModel, Error>) -> ()))
+    func load(data: UserData,
+              completion: @escaping ((Result<RegistChangeResultModel, Error>) -> ()))
 }
 
 class RegisterRequest : RegisterRequestProtocol {
@@ -28,8 +28,8 @@ class RegisterRequest : RegisterRequestProtocol {
         }()
     }
 
-    func load(data: EnterModel,
-              completion: @escaping ((Result<RegistModel, Error>) -> ())) {
+    func load(data: UserData,
+              completion: @escaping ((Result<RegistChangeResultModel, Error>) -> ())) {
         
         var url: URL
         let id = Int.random(in: 1...300)
@@ -53,7 +53,7 @@ class RegisterRequest : RegisterRequestProtocol {
             guard let data = data else { return }
 
             do {
-                let result = try self.decoder.decode(RegistModel.self, from: data)
+                let result = try self.decoder.decode(RegistChangeResultModel.self, from: data)
                 return completion(.success(result))
             } catch {
                 return completion(.failure(ErrorMyCastom.enterLoginAndPassword))

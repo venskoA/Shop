@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ChangeRequestProtocol: RequestProtocol {
-    func load(data: EnterModel,
+    func load(data: UserData,
               completion: @escaping ((Result<LogoutResultModel, Error>) -> ()))
 }
 
@@ -27,7 +27,7 @@ class ChangeRequest : ChangeRequestProtocol {
         }()
     }
 
-    func load(data: EnterModel,
+    func load(data: UserData,
               completion: @escaping ((Result<LogoutResultModel, Error>) -> ())) {
 
         var url: URL
@@ -48,7 +48,6 @@ class ChangeRequest : ChangeRequestProtocol {
 
         let task = session.dataTask(with: url) {[weak self] data, response, error in
             guard let self = self else { return }
-
             guard let data = data else { return }
 
             do {

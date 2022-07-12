@@ -26,7 +26,7 @@ class LogoutRequest: RequestProtocolEnterExit {
         }()
     }
 
-    func load(data: EnterModel,
+    func load(data: UserData,
               completion: @escaping ((Result<Data, Error>) -> ())) {
         var url: URL
         let id = data.id

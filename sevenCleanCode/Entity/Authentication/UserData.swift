@@ -12,7 +12,7 @@ enum Gender: String, Codable {
     case femail = "f"
 }
 
-struct EnterModel: Codable {
+struct UserData: Codable {
     var id: Int
     var userName: String
     var password: String

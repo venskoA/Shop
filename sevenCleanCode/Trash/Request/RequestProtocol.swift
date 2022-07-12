@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 protocol RequestProtocol {
     var configureUrl: ConfURLProtocol { get set }
     var session: URLSession  { get set }

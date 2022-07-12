@@ -12,12 +12,14 @@ enum ErrorMyCastom: Error {
     case enterLoginAndPassword
     case errorLogout
     case errorListProducts
+    case errorParth
+    case errorAddReview
 }
 
 protocol RequestProtocolEnterExit {
     var configureUrl: ConfURLProtocol { get set }
     var session: URLSession  { get set }
-    func load(data: EnterModel,
+    func load(data: UserData,
               completion: @escaping ((Result<Data, Error>) -> ()))
 }
 
@@ -35,7 +37,7 @@ class LoginRequest: RequestProtocolEnterExit {
         }()
     }
 
-    func load(data: EnterModel,
+    func load(data: UserData,
               completion: @escaping ((Result<Data, Error>) -> ())) {
         var url: URL
         let param: [String: String] = ["username": data.userName,

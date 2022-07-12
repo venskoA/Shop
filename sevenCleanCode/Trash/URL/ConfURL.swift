@@ -10,7 +10,7 @@ import Foundation
 protocol ConfURLProtocol {
     var scheme: String { get set }
     var host: String { get set }
-    func configure(param: [String : String], path: TypeMetod) throws -> URL
+    func configure(param: [String : String], path: TypeMetodJson) throws -> URL
 }
 
 final class ConfigURLLogin: ConfURLProtocol {
@@ -18,11 +18,11 @@ final class ConfigURLLogin: ConfURLProtocol {
     var host: String
 
     init() {
-        self.scheme = "scheme"
-        self.host = "host"
+        self.scheme = ""
+        self.host = ""
     }
 
-    func configure(param: [String : String], path: TypeMetod) throws -> URL {
+    func configure(param: [String : String], path: TypeMetodJson) throws -> URL {
         var urlComponent = URLComponents()
 
         var queryItem = [URLQueryItem]()

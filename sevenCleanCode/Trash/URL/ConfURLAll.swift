@@ -18,7 +18,7 @@ class ConfURLAll: ConfURLProtocol {
         self.confURL.scheme = scheme
     }
 
-    func configure(param: [String : String], path: TypeMetod) throws -> URL {
+    func configure(param: [String : String], path: TypeMetodJson) throws -> URL {
         return try confURL.configure(param: param, path: path)
     }
 }
