@@ -8,74 +8,62 @@
 import SwiftUI
 
 struct StartView: View {
-
-    @State var dataModel: EnterModel
-    var presenter: StartPresenterProtocol
-
-    @State var presntNewView = false
+    
+    @State var userData: UserData = {
+        guard let userdef = UserDefault.shared.userData else {
+            return UserData(id: 0,
+                            userName: "",
+                            password: "",
+                            email: "",
+                            gender: .mail,
+                            creditCards: "",
+                            bio: "")
+        }
+        return userdef
+    }()
+    
+    @State var selectorTabView = 0
     
     var login = FactoryLogin().configFactory(caseFactory: .login)
-
+    
     var body: some View {
-        if !presntNewView {
-            loginView
-        } else {
-            WorkView(dataModel: dataModel, presenter: presenter, presntNewView: $presntNewView)
-        }
-    }
-}
-
-extension StartView {
-    var loginView: some View {
-        ZStack {
-            Image("3")
-                .resizable()
-
-            VStack {
-                Group {
-                    TextField("Enter name", text: $dataModel.userName)
-                    TextField("Enter password", text: $dataModel.password)
-
-                }
-                .frame(height: 35)
-                .cornerRadius(30)
-                .background(.white)
-                .foregroundColor(.black)
-                .padding(20)
-
-                Button(action: {
-                    login
-                        .load(data: dataModel) { result in
-                            switch result {
-                            case .success(let data):
-                                let decod = presenter.decodLogin(data: data)
-                                switch decod {
-                                case .success(let finalDecod):
-                                    presntNewView = presenter.checkValue(data: finalDecod)
-                                case .failure(let err):
-                                    print(err)
-                                }
-                            case .failure(let error):
-                                print(error)
-                            }
-                        }
-                }, label: {
-                    Text("Enter")
-                })
+        TabView(selection: $selectorTabView) {
+            NavigationView {
+                Goods()
             }
+            .tabItem {
+                Image(systemName: "list.dash")
+                Text("Categories")
+            }
+            .tag(0)
+
+            BasketView()
+                .tabItem {
+                    Image(systemName: "arrow.up.bin.fill")
+                    Text("Basket")
+                }
+                .tag(1)
+            
+            AuthMainView(userData: userData)
+                .tabItem {
+                    Image(systemName: "person.crop.circle.fill")
+                    Text("Account")
+                }
+                .tag(2)
         }
     }
 }
 
 
-struct StartView_Previews: PreviewProvider {
-    static var previews: some View {
-        let dataModel = EnterModel(id: 123, userName: "aa", password: "123", email: "ooo@gmail.com", gender: .mail, creditCards: "98980-99090-900", bio: "---")
 
-        let presenter = StartPresenter()
-
-        let view = StartView(dataModel: dataModel, presenter: presenter)
-
-        return view
-    }
-}
+//struct StartView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let dataModel = UserData(id: 0, userName: "aa", password: "123", email: "ooo@gmail.com", gender: .mail, creditCards: "98980-99090-900", bio: "---")
+//
+//        let presenter = StartPresenter()
+//
+//        let view = StartView(userData: dataModel, presenter: presenter)
+//
+//        return view
+//    }
+//}
