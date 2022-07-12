@@ -10,5 +10,6 @@ import Foundation
 struct RegistChangeResultModel: Codable {
     var result: Int
     var userMessage: String?
+    var errorMessoge: String?
 }
 
