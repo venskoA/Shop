@@ -58,7 +58,6 @@ class BasketPresenter: ObservableObject {
                     self.errorMessage = result.errorMessoge ?? "NIL removeProducts"
                     return
                 }
-
                 self.featchBaskey()
             default:
                 break
@@ -75,7 +74,12 @@ class BasketPresenter: ObservableObject {
                     return
                 }
 
-                self.featchBaskey()
+                DispatchQueue.main.async {
+                    self.errorMessage = result.userMessage ?? "YYYps"
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.featchBaskey()
+                }
             default:
                 break
             }
