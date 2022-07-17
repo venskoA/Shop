@@ -24,7 +24,7 @@ class BasketRequest: GeneralRequestProtocol {
     var errorParser: ErrorParserProtocol
     var session: Session
     var queue: DispatchQueue
-    var begininUrl: URL
+    var begininUrl: URL 
 
     init(errorParser: ErrorParserProtocol,
          session: Session,
@@ -50,7 +50,7 @@ extension BasketRequest: BasketRequestProtocol {
                     quantity: Int,
                     completion: @escaping (AFDataResponse<AddRemoveGoodsBasketModel>) -> ()) {
         let modelReguest = AddProduct(url: begininUrl,
-                                      path: .addReview,
+                                      path: .addProduct,
                                       productId: productId,
                                       quantity: quantity)
         request(request: modelReguest,
@@ -60,7 +60,7 @@ extension BasketRequest: BasketRequestProtocol {
     func removeProduct(productId: Int,
                        completion: @escaping (AFDataResponse<AddRemoveGoodsBasketModel>) -> ()) {
         let modelReguest = RemoveProduct(url: begininUrl,
-                                         path: .removeReview,
+                                         path: .removeProduct,
                                          productId: productId)
         request(request: modelReguest,
                 completion: completion)
@@ -79,7 +79,7 @@ extension BasketRequest: BasketRequestProtocol {
 extension BasketRequest {
     struct GetBasker: RequestRouter {
         var url: URL
-        var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: TypeMetodJson
         var userId: Int
 
@@ -90,20 +90,20 @@ extension BasketRequest {
 
     struct AddProduct: RequestRouter {
         var url: URL
-        var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: TypeMetodJson
         var productId: Int
         var quantity: Int
 
         var parametrs: Parameters? {
-            return ["id_product": String(productId),
-                    "quantity": String(quantity)]
+            return ["id_product": productId,
+                    "quantity": quantity]
         }
     }
 
     struct RemoveProduct: RequestRouter {
         var url: URL
-        var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: TypeMetodJson
         var productId: Int
 
@@ -114,7 +114,7 @@ extension BasketRequest {
 
     struct OrderPey: RequestRouter {
         var url: URL
-        var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: TypeMetodJson
         var total: Int
 
