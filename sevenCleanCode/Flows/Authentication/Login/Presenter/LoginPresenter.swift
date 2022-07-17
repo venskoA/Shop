@@ -13,7 +13,7 @@ class LoginPresenter: PresenterNetworkProtocol {
                         .makeAuthenticationRequest()
 
     func response(_ userData: UserData, completion: @escaping (String) -> ()) {
-        service.getLogin(userName: userData.userName,
+        service.getLogin(userName: userData.login,
                          password: userData.password) { response in
             DispatchQueue.main.async {
                 switch response.result {
@@ -26,12 +26,14 @@ class LoginPresenter: PresenterNetworkProtocol {
                     let value = valueResponse.user
 
                     UserDefault.shared.userData = UserData(id: value.id,
-                                                           userName: (value.name + value.lastname),
-                                                           password: "",
-                                                           email: "",
+                                                           firstName: value.firstName,
+                                                           lastName: value.lastName,
+                                                           login: value.login,
+                                                           password: value.password,
+                                                           email: value.email,
                                                            gender: .mail,
-                                                           creditCards: "",
-                                                           bio: "")
+                                                           creditCards: value.creditCards,
+                                                           bio: value.bio)
                     completion("Enter completed")
                 case .failure(_):
                     break
