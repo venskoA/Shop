@@ -37,8 +37,10 @@ extension RegistChangeView {
     var registLine: some View {
         VStack(alignment: .center,
                spacing: 20) {
-            TextField("Enter user name", text: $userData.userName)
-            TextField("Enter password", text: $userData.password)
+            TextField("Enter first name", text: $userData.firstName)
+            TextField("Enter last name", text: $userData.lastName)
+            TextField("Enter login", text: $userData.login)
+            SecureField("Enter password", text: $userData.password)
             TextField("Enter email", text: $userData.email)
             Picker("Color", selection: $valuePicker) {
                 ForEach(0..<gender.count) {
@@ -67,7 +69,8 @@ extension RegistChangeView {
 
 struct RegistView_Previews: PreviewProvider {
     static var previews: some View {
-        @State var dataModel = UserData(id: 0, userName: "aa", password: "123", email: "ooo@gmail.com", gender: .mail, creditCards: "98980-99090-900", bio: "---")
+        @State var dataModel = UserData(id: 0,
+                                        firstName: "aa", lastName: "jnkf", login: "jkfnc", password: "123", email: "ooo@gmail.com", gender: .mail, creditCards: "98980-99090-900", bio: "---")
         @State var nav = false
 
         let view = RegistChangeView(userData: $dataModel,

@@ -9,7 +9,7 @@ import Foundation
 
 struct LoginResultModel: Codable {
     let result: Int
-    let user: User
+    let user: UserData
 }
 
 struct User: Codable {
@@ -25,3 +25,4 @@ struct User: Codable {
         case lastname = "user_lastname"
     }
 }
+

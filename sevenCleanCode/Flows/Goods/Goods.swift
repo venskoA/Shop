@@ -15,7 +15,7 @@ struct Goods: View {
             List(presenter.goods) { good in
                 NavigationLink {
                     GoodDescription(good: good,
-                                    presenter: GoodDescriptionPresenter(idGood: good.idProduct))
+                                    presenter: GoodDescriptionPresenter(idGoods: good.idProduct))
                 } label: {
                     GoodCellList(good: good)
                         .navigationTitle("Shop")

@@ -32,7 +32,8 @@ class GoodsRequest: GeneralRequestProtocol {
 extension GoodsRequest: GoodsRequestProtocol {
     func getCatalogGoods(completion: @escaping (AFDataResponse<[GoodsModel]>) -> ()) {
         let modelRequest = Catalog(url: begininUrl,
-                                   path: .listProduct)
+                                   path: .listProduct,
+                                   page: "1")
         request(request: modelRequest,
                 completion: completion)
     }
@@ -41,8 +42,12 @@ extension GoodsRequest: GoodsRequestProtocol {
 extension GoodsRequest {
     struct Catalog: RequestRouter {
         var url: URL
-        var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: TypeMetodJson
-        var parametrs: Parameters?
+        var page: String
+
+        var parametrs: Parameters? {
+            ["page" : page]
+        }
     }
 }

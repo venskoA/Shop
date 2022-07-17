@@ -12,8 +12,8 @@ struct GoodDescription: View {
     @ObservedObject var presenter: GoodDescriptionPresenter
 
     @State var showAlert = true
-    @State var reviewTextField = "Good product"
-    @State var amountProduct = 1
+    @State var reviewTextField = "Perfect product"
+    @State var amountProduct = 0
     @State var showError = ""
 
     var body: some View {
@@ -26,7 +26,7 @@ struct GoodDescription: View {
                isPresented: $showAlert,
                actions: {
             TextField("Enter your review", text: $reviewTextField)
-            SecureField("Enter your rewiew", text: $reviewTextField)
+                .background(.red)
             Button(action: {
                 let userId = UserDefault.shared.userData?.id ?? 0
                 presenter.responceAddReview(idUser: userId,
@@ -97,9 +97,10 @@ extension GoodDescription {
                     Text("Add product")
                 }
                 .onTapGesture {
-                    if good.quantity ?? 0 > 0 {
-                    presenter.addProductInBasket(idProduct: good.idProduct,
-                                                 quantity: amountProduct)
+                    if good.quantity ?? 0 > 0 && amountProduct > 0 {
+                        presenter.addProductInBasket(idProduct: good.idProduct,
+                                                     quantity: amountProduct)
+                        good.quantity! -= amountProduct
                     }
                 }
                 Picker("Amount", selection: $amountProduct) {
@@ -137,6 +138,6 @@ struct GoodDescription_Previews: PreviewProvider {
                               quantity: 122,
                               image: "3",
                               description: "This is a new phone. Number one in world. It has a big screen and has height cpu")
-        GoodDescription(good: good, presenter: GoodDescriptionPresenter(idGood: 1))
+        GoodDescription(good: good, presenter: GoodDescriptionPresenter(idGoods: 1))
     }
 }

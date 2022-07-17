@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct SevenCleanCodeApp: App {
     let persistenceController = PersistenceController.shared
-    var dataModel = UserData(id: 123, userName: "aa", password: "123", email: "ooo@gmail.com", gender: .mail, creditCards: "98980-99090-900", bio: "---")
+    var dataModel = UserData(id: 123, firstName: "aa", lastName: "bmdsnm", login: "nfbsjk", password: "123", email: "ooo@gmail.com", gender: .mail, creditCards: "98980-99090-900", bio: "---")
 
     var body: some Scene {
         WindowGroup {

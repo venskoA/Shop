@@ -50,7 +50,7 @@ struct AuthMainView: View {
 struct WorkView_Previews: PreviewProvider {
     static var previews: some View {
 
-        let dataModel = UserData(id: 0, userName: "aa", password: "123", email: "ooo@gmail.com", gender: .mail, creditCards: "98980-99090-900", bio: "---")
+        let dataModel = UserData(id: 0, firstName: "aa", lastName: "bcnsdn", login: "dsbnkj",  password: "123", email: "ooo@gmail.com", gender: .mail, creditCards: "98980-99090-900", bio: "---")
 
         let presenter = StartPresenter()
         @State var valueBool = true

@@ -25,7 +25,13 @@ struct AccountView: View {
                         .frame(width: 100, height: 100, alignment: .center)
                         .cornerRadius(50)
                     VStack(alignment: .leading, spacing: 10) {
-                        Text(userData.userName)
+                        HStack {
+                            Text(userData.firstName)
+                            Text(userData.lastName)
+                        }
+                        Text(userData.login)
+                        Text(String(userData.id))
+                        Text(userData.email)
                         Text(userData.creditCards)
                         Text(userData.bio)
                     }
@@ -34,6 +40,8 @@ struct AccountView: View {
                 if !errorMessage.isEmpty {
                     Text(errorMessage)
                 }
+
+                Spacer()
 
                 HStack {
                     NavigationLink {
@@ -48,7 +56,7 @@ struct AccountView: View {
                     Button {
                         presenter.response(userData) { message in
                             userData.id = 0
-                           errorMessage = message
+                            errorMessage = message
                         }
                     } label: {
                         Text("Logout")
@@ -66,7 +74,9 @@ struct AccountView_Previews: PreviewProvider {
 
     static var previews: some View {
         @State var userData = UserData(id: 123,
-                                       userName: "aa",
+                                       firstName: "aa",
+                                       lastName: "fjjbjs",
+                                       login: "kjrf",
                                        password: "123",
                                        email: "ooo@gmail.com",
                                        gender: .mail,

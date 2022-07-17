@@ -12,7 +12,9 @@ struct StartView: View {
     @State var userData: UserData = {
         guard let userdef = UserDefault.shared.userData else {
             return UserData(id: 0,
-                            userName: "",
+                            firstName: "",
+                            lastName: "",
+                            login: "",
                             password: "",
                             email: "",
                             gender: .mail,
@@ -23,9 +25,7 @@ struct StartView: View {
     }()
     
     @State var selectorTabView = 0
-    
-    var login = FactoryLogin().configFactory(caseFactory: .login)
-    
+
     var body: some View {
         TabView(selection: $selectorTabView) {
             NavigationView {

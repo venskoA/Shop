@@ -11,11 +11,13 @@ class GoodDescriptionPresenter: ObservableObject {
     private let service = RequestMainFactory().makeReviewRequest()
     private let serviceBasket = RequestMainFactory().makeBaskeyRequest()
 
+    var idGoods: Int
     @Published var listReview = [ListReviewModel]()
     @Published var addReview = ""
 
-    init(idGood: Int) {
-        self.responceListReview(idGood: idGood)
+    init(idGoods: Int) {
+        self.idGoods = idGoods
+        self.responceListReview(idGood: idGoods)
     }
 
     func responceAddReview(idUser: Int,
@@ -31,6 +33,7 @@ class GoodDescriptionPresenter: ObservableObject {
                             self.addReview = success.errorMessage ?? "NIL"
                             return
                         }
+                        self.responceListReview(idGood: idGood)
                         self.addReview = userMessage
                     case .failure(_):
                         break
@@ -47,6 +50,7 @@ class GoodDescriptionPresenter: ObservableObject {
                     self.addReview = success.errorMessage ?? "NIL"
                     return
                 }
+                self.responceListReview(idGood: self.idGoods)
                 self.addReview = userMessage
             default:
                 break
@@ -58,7 +62,9 @@ class GoodDescriptionPresenter: ObservableObject {
         service.getListReview(idGood: idGood) { response in
             switch response.result {
             case .success(let value):
-                self.listReview = value.review
+                DispatchQueue.main.async {
+                    self.listReview = value.review
+                }
             default:
                 break
             }
@@ -71,11 +77,14 @@ class GoodDescriptionPresenter: ObservableObject {
                                  quantity: quantity) { response in
             switch response.result {
             case .success(let result):
+                DispatchQueue.main.async {
                 guard result.result == 1 else {
                     self.addReview = result.errorMessoge ?? "NIL"
                     return
                 }
-                self.addReview = "Add successful"
+                    self.addReview = "Add successful"
+//                    self.serviceBasket.
+                }
             default:
                 break
             }

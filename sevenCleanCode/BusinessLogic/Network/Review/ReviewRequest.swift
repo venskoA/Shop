@@ -71,7 +71,7 @@ extension ReviewRequest: ReviewRequestProtocol {
 extension ReviewRequest {
     struct AddReview: RequestRouter {
         var url: URL
-        var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: TypeMetodJson
         var userId: Int
         var text: String
@@ -86,7 +86,7 @@ extension ReviewRequest {
 
     struct ListReview: RequestRouter {
         var url: URL
-        var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: TypeMetodJson
         var idGoods: Int
 
@@ -97,7 +97,7 @@ extension ReviewRequest {
 
     struct RemoveReview: RequestRouter {
         var url: URL
-        var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: TypeMetodJson
         var idComment: Int
 

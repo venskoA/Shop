@@ -8,7 +8,7 @@
 import Foundation
 
 struct OrderPayResultModel: Codable {
-    let result: Int
-    let userMessage: String?
+    var result: Int
+    var userMessage: String?
     var errorMessoge: String?
 }

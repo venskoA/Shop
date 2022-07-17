@@ -53,7 +53,8 @@ extension AuthenticationRequest: AuthenticationRequestProtocol {
 
     func getLogout(userId: Int,
                    completion: @escaping (AFDataResponse<LogoutResultModel>) -> ()) {
-        let modelRequest = Logout(url: begininUrl,
+        let begininUrlCastom = URL(string: "https://raw.githubusercontent.com")!
+        let modelRequest = Logout(url: begininUrlCastom,
                                   path: .lodout,
                                   userId: userId)
         request(request: modelRequest,
@@ -62,7 +63,8 @@ extension AuthenticationRequest: AuthenticationRequestProtocol {
 
     func changeData(userData: UserData,
                     completion: @escaping (AFDataResponse<RegistChangeResultModel>) -> ()) {
-        let modelRequest = RegistChange(url: begininUrl,
+        let begininUrlCastom = URL(string: "https://raw.githubusercontent.com")!
+        let modelRequest = RegistChange(url: begininUrlCastom,
                                         path: .change,
                                         usedData: userData)
         request(request: modelRequest,
@@ -83,7 +85,7 @@ extension AuthenticationRequest {
     struct Login: RequestRouter {
 
         var url: URL
-        var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: TypeMetodJson
         var userName: String
         var password: String
@@ -107,13 +109,15 @@ extension AuthenticationRequest {
 
     struct RegistChange: RequestRouter {
         var url: URL
-        var method: HTTPMethod = .get
+        var method: HTTPMethod = .post
         var path: TypeMetodJson
         var usedData: UserData
 
         var parametrs: Parameters? {
             return ["id_user" : usedData.id,
-                    "username" : usedData.userName,
+                    "first_name" : usedData.firstName,
+                    "last_name" : usedData.lastName,
+                    "user_login" : usedData.login,
                     "password" : usedData.password,
                     "email" : usedData.email,
                     "gender": usedData.gender.rawValue,

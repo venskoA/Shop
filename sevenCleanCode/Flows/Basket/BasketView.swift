@@ -12,6 +12,10 @@ struct BasketView: View {
 
     var body: some View {
         VStack {
+            Text("Refsech")
+                .onTapGesture {
+                    presenter.featchBaskey()
+                }
             list
             Text(presenter.errorMessage)
             Text("Pay \(presenter.totalPrice)")
@@ -28,8 +32,8 @@ extension BasketView {
         List(presenter.goods) { good in
             VStack(alignment: .trailing) {
                 HStack {
-                    if good.image != nil {
-                        Image(good.image!)
+                    if let imageLocal = good.image {
+                        Image(imageLocal)
                             .resizable()
                             .frame(width: 100, height: 100, alignment: .center)
                             .cornerRadius(20)
@@ -47,7 +51,7 @@ extension BasketView {
                             .lineLimit(3)
                         HStack {
                             Spacer()
-                            Text("quantitu: \(String(good.quantity ?? 0))")
+                            Text("quantitu: \(String(good.quantity))")
                                 .font(.caption)
                         }
                         Text("from \(String(good.price))")

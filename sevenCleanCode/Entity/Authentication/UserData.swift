@@ -14,7 +14,9 @@ enum Gender: String, Codable {
 
 struct UserData: Codable {
     var id: Int
-    var userName: String
+    var firstName: String
+    var lastName: String
+    var login: String
     var password: String
     var email: String
     var gender: Gender
@@ -23,7 +25,9 @@ struct UserData: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id = "id_user"
-        case userName = "username"
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case login = "user_login"
         case password
         case email
         case gender
