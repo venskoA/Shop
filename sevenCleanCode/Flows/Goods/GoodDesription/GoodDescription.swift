@@ -85,6 +85,7 @@ extension GoodDescription {
                 HStack {
                     Image(systemName: "scribble.variable")
                     Text("Add review")
+                        .accessibilityIdentifier("Add review")
                 }
                 .onTapGesture {
                     showAlert.toggle()
@@ -103,17 +104,21 @@ extension GoodDescription {
                         good.quantity! -= amountProduct
                     }
                 }
+
                 Picker("Amount", selection: $amountProduct) {
                     ForEach(0..<(good.quantity ?? 0)) {
                         Text("\($0)")
+                            .accessibilityIdentifier("pickerAmount")
                     }
                 }
+
             }
             .padding()
 
             if !presenter.addReview.isEmpty {
                 Text("\(presenter.addReview)")
                     .animation(.easeIn(duration: 3))
+                    .accessibilityIdentifier("Remove good")
             }
         }
     }
@@ -124,6 +129,7 @@ extension GoodDescription {
                 .onTapGesture {
                     presenter.responceRemoveReview(idComment: review.idReview)
                 }
+                .accessibilityIdentifier("\(review.idReview)")
         }
     }
 }

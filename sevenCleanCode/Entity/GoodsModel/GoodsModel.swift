@@ -26,3 +26,9 @@ struct GoodsModel: Codable, Identifiable {
         case description
     }
 }
+
+extension GoodsModel: Equatable {
+    static func == (lhs: GoodsModel, rhs: GoodsModel) -> Bool {
+        lhs.idProduct == rhs.idProduct
+    }
+}

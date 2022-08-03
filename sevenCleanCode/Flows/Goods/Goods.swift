@@ -19,6 +19,7 @@ struct Goods: View {
                 } label: {
                     GoodCellList(good: good)
                         .navigationTitle("Shop")
+                        .accessibilityIdentifier("goodCell\(good.idProduct)")
                 }
             }
     }

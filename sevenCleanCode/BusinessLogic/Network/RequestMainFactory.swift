@@ -20,6 +20,7 @@ class RequestMainFactory {
         let sessionAlamofire = Session(configuration: configSession)
         return sessionAlamofire
     }()
+
     let container: Container = {
         let container = Container()
         container.register(ErrorParserProtocol.self) { _ in
