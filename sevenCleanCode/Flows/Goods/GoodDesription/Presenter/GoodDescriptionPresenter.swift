@@ -83,7 +83,9 @@ class GoodDescriptionPresenter: ObservableObject {
                     return
                 }
                     self.addReview = "Add successful"
-//                    self.serviceBasket.
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.addReview = ""
+                    }
                 }
             default:
                 break

@@ -15,6 +15,9 @@ protocol AuthenticationRequestProtocol {
     func getLogout(userId: Int,
                    completion: @escaping (AFDataResponse<LogoutResultModel>) -> ())
 
+    func getLogout2(userId: Int,
+                   completion: @escaping (AFDataResponse<Data>) -> ())
+
     func changeData(userData: UserData,
                     completion: @escaping (AFDataResponse<RegistChangeResultModel>) -> ())
 
@@ -53,6 +56,16 @@ extension AuthenticationRequest: AuthenticationRequestProtocol {
 
     func getLogout(userId: Int,
                    completion: @escaping (AFDataResponse<LogoutResultModel>) -> ()) {
+        let begininUrlCastom = URL(string: "https://raw.githubusercontent.com")!
+        let modelRequest = Logout(url: begininUrlCastom,
+                                  path: .lodout,
+                                  userId: userId)
+        request(request: modelRequest,
+                completion: completion)
+    }
+
+    func getLogout2(userId: Int,
+                   completion: @escaping (AFDataResponse<Data>) -> ()) {
         let begininUrlCastom = URL(string: "https://raw.githubusercontent.com")!
         let modelRequest = Logout(url: begininUrlCastom,
                                   path: .lodout,

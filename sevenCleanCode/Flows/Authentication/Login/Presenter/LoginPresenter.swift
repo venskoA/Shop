@@ -19,7 +19,7 @@ class LoginPresenter: PresenterNetworkProtocol {
                 switch response.result {
                 case .success(let valueResponse):
                     guard valueResponse.result == 1 else {
-                        completion("Wrong user name or password ")
+                        completion("Wrong user name or password")
                         return
                     }
 
