@@ -51,7 +51,9 @@ class GoodDescriptionPresenter: ObservableObject {
                     return
                 }
                 self.responceListReview(idGood: self.idGoods)
-                self.addReview = userMessage
+                DispatchQueue.main.async {
+                    self.addReview = userMessage
+                }
             default:
                 break
             }
