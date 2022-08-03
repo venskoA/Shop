@@ -51,3 +51,45 @@ extension GoodsRequest {
         }
     }
 }
+
+class MockGoodsRequest: GeneralRequestProtocol {
+    var errorParser: ErrorParserProtocol
+    var session: Session
+    var queue: DispatchQueue
+    var begininUrl: URL
+
+    var success = false
+    var result: AFDataResponse<[GoodsModel]>?
+
+    init(errorParser: ErrorParserProtocol,
+         session: Session,
+         queue: DispatchQueue = DispatchQueue.global(qos: .utility),
+         begininUrl: URL) {
+        self.errorParser = errorParser
+        self.session = session
+        self.queue = queue
+        self.begininUrl = begininUrl
+    }
+}
+
+extension MockGoodsRequest: GoodsRequestProtocol {
+
+    func getCatalogGoods(completion: @escaping (AFDataResponse<[GoodsModel]>) -> ()) {
+        success = true
+        result.map(completion)
+    }
+}
+
+class FakeService {
+    let httpClient: GoodsRequestProtocol
+
+    init(httpClient: GoodsRequestProtocol) {
+        self.httpClient = httpClient
+    }
+
+    func getData(completion: @escaping (AFDataResponse<[GoodsModel]>) -> ()) {
+        httpClient.getCatalogGoods { data in
+            completion(data)
+        }
+    }
+}
