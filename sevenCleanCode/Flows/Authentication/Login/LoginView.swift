@@ -16,7 +16,9 @@ struct LoginView: View {
         VStack {
             Group {
                 TextField("Enter name", text: $dataModel.login)
+                    .autocapitalization(.none)
                 SecureField("Enter password", text: $dataModel.password)
+                    .autocapitalization(.none)
             }
             .frame(height: 35)
             .cornerRadius(30)

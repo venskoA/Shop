@@ -49,6 +49,7 @@ struct StartView: View {
                     Image(systemName: "person.crop.circle.fill")
                     Text("Account")
                 }
+                .accessibilityIdentifier("Account")
                 .tag(2)
         }
     }
