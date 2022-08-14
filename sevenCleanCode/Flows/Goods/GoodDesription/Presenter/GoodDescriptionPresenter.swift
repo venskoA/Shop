@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class GoodDescriptionPresenter: ObservableObject {
     private let service = RequestMainFactory().makeReviewRequest()
@@ -40,6 +41,12 @@ class GoodDescriptionPresenter: ObservableObject {
                     }
                 }
             }
+
+        Deferred {
+            Future<Any, Never> { promise in
+
+            }
+        }
     }
 
     func responceRemoveReview(idComment: Int) {
@@ -80,10 +87,10 @@ class GoodDescriptionPresenter: ObservableObject {
             switch response.result {
             case .success(let result):
                 DispatchQueue.main.async {
-                guard result.result == 1 else {
-                    self.addReview = result.errorMessoge ?? "NIL"
-                    return
-                }
+                    guard result.result == 1 else {
+                        self.addReview = result.errorMessoge ?? "NIL"
+                        return
+                    }
                     self.addReview = "Add successful"
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.addReview = ""
