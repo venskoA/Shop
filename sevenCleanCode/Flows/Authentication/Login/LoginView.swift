@@ -9,12 +9,39 @@ import SwiftUI
 
 struct LoginView: View {
     @Binding var dataModel: UserData
+
+    @State var timeLive = String()
+    let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
+    @Environment(\.scenePhase) var scenePhase
+
+
     let presenter: PresenterNetworkProtocol
     @State var errorText: String = ""
     
     var body: some View {
         VStack {
             Group {
+                Text("\(timeLive)")
+                    .onReceive(timer) { input in
+                        timeLive = input.formatted(.dateTime)
+                    }
+                    .onChange(of: scenePhase) { newPhase in
+                        if newPhase == .active {
+                            print("Active")
+                        } else if newPhase == .inactive {
+                            print("Inactive")
+                        } else if newPhase == .background {
+                            print("Background")
+                        }
+                    }
+                    .animation(.easeIn)
+
+                Text("Fatal error")
+                    .onTapGesture {
+                        fatalError("Crachlitics")
+                    }
+                    
+
                 TextField("Enter name", text: $dataModel.login)
                     .autocapitalization(.none)
                 SecureField("Enter password", text: $dataModel.password)

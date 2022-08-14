@@ -6,15 +6,24 @@
 //
 
 import SwiftUI
+import FirebaseCore
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+
+    return true
+  }
+}
 
 @main
 struct SevenCleanCodeApp: App {
-    let persistenceController = PersistenceController.shared
-    var dataModel = UserData(id: 123, firstName: "aa", lastName: "bmdsnm", login: "nfbsjk", password: "123", email: "ooo@gmail.com", gender: .mail, creditCards: "98980-99090-900", bio: "---")
+//    let persistenceController = PersistenceController.shared
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
     var body: some Scene {
         WindowGroup {
-            let presenter = StartPresenter()
             StartView()
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)

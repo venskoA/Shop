@@ -34,6 +34,9 @@ class LoginPresenter: PresenterNetworkProtocol {
                                                            gender: .mail,
                                                            creditCards: value.creditCards,
                                                            bio: value.bio)
+
+                    AnaliticsReport().reportMessage(message: "Regist_value", parameters: ["firstName": value.firstName])
+
                     completion("Enter completed")
                 case .failure(_):
                     break
