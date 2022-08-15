@@ -13,6 +13,4 @@ target 'sevenCleanCode' do
     # Pods for testing
   end
 
-pod 'GoogleAnalytics'
-
 end
