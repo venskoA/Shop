@@ -17,19 +17,19 @@ class FirstUITests: XCTestCase {
 
     }
 
-    func testOpenItemsInList() {
-
-        let app = XCUIApplication()
-        app.launch()
-
-        print(app.debugDescription)
-        app.tables.images["goodCell2"].tap()
-        let addReview = app.staticTexts["Add review"]
-
-        app.tables.staticTexts["5"].tap()
-
-        XCTAssert(app.staticTexts["Remove good"].exists)
-    }
+//    func testOpenItemsInList() {
+//
+//        let app = XCUIApplication()
+//        app.launch()
+//
+//        print(app.debugDescription)
+//        app.tables.images["goodCell2"].tap()
+//        let addReview = app.staticTexts["Add review"]
+//
+//        app.tables.staticTexts["5"].tap()
+//
+//        XCTAssert(app.staticTexts["Remove good"].exists)
+//    }
 
     func testEnterLoginAndPassword() {
         let app = XCUIApplication()
