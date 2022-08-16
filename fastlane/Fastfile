@@ -19,20 +19,23 @@ platform :ios do
   desc "Description of what the lane does"
   lane :custom_lane do
 
-spm(
-  command: "build",
-  build_path: "./build",
-  configuration: "release"
-)
 
-scan(
+# ensure_git_status_clean
+
+# clear_derived_data
+
+# spm(
+#  command: "build",
+#  build_path: "./build",
+#  configuration: "release"
+# )
+
+ scan(
   workspace: "sevenCleanCode.xcworkspace",
   devices: ["iPhone 6s", "iPad Air"]
-)
+ )
 
- capture_ios_screenshots(
-  skip_open_summary: true,
-  clean: true
-)
+ capture_ios_screenshots
+
   end
 end
