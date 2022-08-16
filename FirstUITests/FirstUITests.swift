@@ -33,14 +33,20 @@ class FirstUITests: XCTestCase {
 
     func testEnterLoginAndPassword() {
         let app = XCUIApplication()
+
+        continueAfterFailure = false
+        setupSnapshot(app)
+
         app.launch()
 
         print(app.debugDescription)
+
 
         app.tabBars
             .buttons["Account"]
             .firstMatch
             .tap()
+        snapshot("Account")
 
         let login = app.textFields["Enter name"].firstMatch
         let password = app.secureTextFields["Enter password"].firstMatch
