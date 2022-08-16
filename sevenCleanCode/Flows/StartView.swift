@@ -24,7 +24,7 @@ struct StartView: View {
         return userdef
     }()
     
-    @State var selectorTabView = 0
+    @State var selectorTabView = 2
 
     var body: some View {
         TabView(selection: $selectorTabView) {
